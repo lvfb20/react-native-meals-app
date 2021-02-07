@@ -23,6 +23,11 @@ const defaultScreenOptions = {
   },
   headerTintColor: uiConstants.isAndroid ? 'white' : R.colors.primary,
   headerTitle: '',
+  headerTitleStyle: {
+    fontFamily: R.fonts.OpenSansBold,
+    fontSize: 18
+  },
+
 };
 
 export const CategoriesNavigator = (props) => {
@@ -72,8 +77,11 @@ export const SideNavigator = (props) => {
           }}
           drawerContentOptions={{
             activeTintColor: R.colors.primary,
-            inactiveTintColor: R.colors.secondaryText
-            
+            inactiveTintColor: R.colors.secondaryText,
+            labelStyle: {
+              fontFamily: R.fonts.OpenSansBold,
+              fontSize: 18
+            }
           }}>
               <DrawerNavigator.Screen 
             name={'Categories'}
