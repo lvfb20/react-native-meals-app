@@ -10,7 +10,8 @@ const colors = {
     clear: 'transparent',
     opacity: 'rgba(0,0,0,0.4)',
     white: '#FFF',
-    black: '#000'
+    black: '#000',
+    lightGrey: '#E0E0E0'
   };
   
   export default colors;

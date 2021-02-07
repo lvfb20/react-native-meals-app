@@ -5,7 +5,9 @@ import { createDrawerNavigator, DrawerItemList } from '@react-navigation/drawer'
 import ScreenKey from '../constants/screenKeys';
 import uiConstants from '../constants/uiConstants';
 import R from 'resources/R';
-
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faFilter} from '@fortawesome/free-solid-svg-icons';
+import {faThLarge} from '@fortawesome/free-solid-svg-icons';
 //Screens
 import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealsScreen from '../screens/CategoryMealsScreen';
@@ -77,7 +79,7 @@ export const SideNavigator = (props) => {
           }}
           drawerContentOptions={{
             activeTintColor: R.colors.primary,
-            inactiveTintColor: R.colors.secondaryText,
+            inactiveTintColor: R.colors.lightGrey,
             labelStyle: {
               fontFamily: R.fonts.OpenSansBold,
               fontSize: 18
@@ -88,7 +90,7 @@ export const SideNavigator = (props) => {
             component={CategoriesNavigator}
             options={{
                 drawerIcon: props => (
-                  <Text>-</Text>
+                  <FontAwesomeIcon icon={faThLarge} color={R.colors.primary} />
                 )
               }}
             ></DrawerNavigator.Screen>
@@ -97,7 +99,7 @@ export const SideNavigator = (props) => {
             component={FiltersNavigator}
             options={{
                 drawerIcon: props => (
-                  <Text>-</Text>
+                  <FontAwesomeIcon icon={faFilter} color={R.colors.primary} />
                 )
               }}
             ></DrawerNavigator.Screen>
