@@ -71,7 +71,9 @@ export const SideNavigator = (props) => {
             );
           }}
           drawerContentOptions={{
-            activeTintColor: R.colors.primary
+            activeTintColor: R.colors.primary,
+            inactiveTintColor: R.colors.secondaryText
+            
           }}>
               <DrawerNavigator.Screen 
             name={'Categories'}

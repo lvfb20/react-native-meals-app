@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, View, Text, Button} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {applyFilters} from '../store';
 import FilterSwitch from '../components/FilterSwitch';
+import ButtonIcon from '../components/ButtonIcon';
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 import R from 'resources/R';
 
 const FiltersScreen = (props) => {
@@ -28,13 +30,9 @@ const FiltersScreen = (props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button
-          title="Menu"
-          color="#ccc"
-          onPress={() => {
-            navigation.toggleDrawer();
-          }}
-        />
+        <ButtonIcon style={{marginLeft: 10}} icon={faBars} onPress={() => {
+          navigation.toggleDrawer();
+        }}></ButtonIcon>
       ),
     });
   }, [navigation]);

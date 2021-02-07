@@ -21,17 +21,9 @@ const CategoriesScreen = (props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        // <Button
-        //   title="Menu"
-        //   color="#ccc"
-        //   onPress={() => {
-        //     navigation.toggleDrawer();
-        //   }}
-        // />
         <ButtonIcon style={{marginLeft: 10}} icon={faBars} onPress={() => {
           navigation.toggleDrawer();
         }}></ButtonIcon>
-        
       ),
     });
   }, [navigation]);
