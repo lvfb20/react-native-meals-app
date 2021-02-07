@@ -7,13 +7,13 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import Card from './Card';
-import uiConstant from '../constants/uiConstants';
+import uiConstants from '../constants/uiConstants';
 import R from 'resources/R';
 
 const CategoryGridItem = (props) => {
   let TouchableCmp = TouchableOpacity;
 
-  if (uiConstant.isAndroid && Platform.Version >= 21) {
+  if (uiConstants.isAndroid && Platform.Version >= 21) {
     TouchableCmp = TouchableNativeFeedback;
   }
   return (
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     margin: 15,
     height: 150,
     borderRadius: 10,
-    overflow: uiConstant.isAndroid && Platform.Version >= 21 ? 'hidden' : 'visible',
+    overflow: uiConstants.isAndroid && Platform.Version >= 21 ? 'hidden' : 'visible',
     padding: 15,
   },
   container: {

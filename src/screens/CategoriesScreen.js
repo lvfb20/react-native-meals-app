@@ -8,6 +8,8 @@ import ScreenKeys from '../constants/screenKeys';
 import R from 'resources/R';
 
 import CategoryGridItem from '../components/CategoryGridItem';
+import ButtonIcon from '../components/ButtonIcon';
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 
 const CategoriesScreen = (props) => {
   const navigation = props.navigation;
@@ -19,13 +21,17 @@ const CategoriesScreen = (props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button
-          title="Menu"
-          color="#ccc"
-          onPress={() => {
-            navigation.toggleDrawer();
-          }}
-        />
+        // <Button
+        //   title="Menu"
+        //   color="#ccc"
+        //   onPress={() => {
+        //     navigation.toggleDrawer();
+        //   }}
+        // />
+        <ButtonIcon style={{marginLeft: 10}} icon={faBars} onPress={() => {
+          navigation.toggleDrawer();
+        }}></ButtonIcon>
+        
       ),
     });
   }, [navigation]);
