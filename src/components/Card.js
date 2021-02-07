@@ -1,37 +1,54 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import R from 'resources/R';
+import React from 'react';
+import {
+  View,
+  StyleSheet,
+  Platform,
+} from 'react-native';
 
-const Card = ({ children, style }) => {
-  const containerStyles = [styles.card];
+const Card = props => {
+  const { children, elevation, opacity, cornerRadius } = props;
 
-  if (style) {
-    containerStyles.push(style);
-  }
+  const cardStyle = Platform.select({
+    ios: () => 
+      StyleSheet.create({
+        container: {
+          shadowRadius:elevation, 
+          shadowOpacity:opacity, 
+          shadowOffset:{ width: 0, height: elevation },
+          borderRadius:cornerRadius,
+          backgroundColor: props.backgroundColor,
+        }
+      }),
+    android: () => 
+      StyleSheet.create({
+        container: {
+          elevation:elevation,
+          borderRadius:cornerRadius, 
+          backgroundColor: props.backgroundColor,
+        }
+      })
+  })();
 
-  return <View style={containerStyles}>{children}</View>;
-};
+  return(
+    <View style={{...cardStyle.container, ...props.style}}>
+      {children}
+    </View>
+  )
+}
 
-Card.propTypes = {
-  children: PropTypes.node,
-  style: PropTypes.any,
-};
+Card.prototype = {
+  backgroundColor: PropTypes.string,
+  elevation: PropTypes.number,
+  cornerRadius: PropTypes.number,
+  opacity: PropTypes.number
+}
 
 Card.defaultProps = {
-  children: null,
-  style: null,
-};
+  backgroundColor: '#ffffff',
+  elevation: 2,
+  cornerRadius: 10,
+  opacity: .5
+}
 
-const styles = StyleSheet.create({
-  card: {
-    ...R.styles.shadow,
-    ...{
-      shadowRadius: 8,
-      elevation: 4,
-      backgroundColor: R.colors.white,
-    },
-  },
-});
-
-export default Card;
+export default Card

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   TouchableOpacity,
-  View,
   Text,
   StyleSheet,
   Platform,
@@ -14,17 +13,17 @@ import R from 'resources/R';
 const CategoryGridItem = (props) => {
   let TouchableCmp = TouchableOpacity;
 
-  if (Platform.OS === 'android' && Platform.Version >= 21) {
+  if (uiConstant.isAndroid && Platform.Version >= 21) {
     TouchableCmp = TouchableNativeFeedback;
   }
   return (
-    <TouchableCmp style={styles.container} onPress={props.onSelect}>
       <Card style={{...styles.gridItem, backgroundColor: props.color}}>
+         <TouchableCmp style={styles.container} onPress={props.onSelect}>
         <Text style={styles.title} numberOfLines={2}>
           {props.title}
         </Text>
+        </TouchableCmp>
       </Card>
-    </TouchableCmp>
   );
 };
 
@@ -34,15 +33,14 @@ const styles = StyleSheet.create({
     margin: 15,
     height: 150,
     borderRadius: 10,
-    overflow:
-      uiConstant.isAndroid && Platform.Version >= 21 ? 'hidden' : 'visible',
+    overflow: uiConstant.isAndroid && Platform.Version >= 21 ? 'hidden' : 'visible',
     padding: 15,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-    flexDirection: 'column',
   },
   container: {
-    flex: 1
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
   },
   title: {
     ...R.textStyles.h3

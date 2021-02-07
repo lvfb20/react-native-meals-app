@@ -6,13 +6,15 @@ import {
   TouchableOpacity,
   ImageBackground
 } from 'react-native';
+import Card from './Card';
+import uiConstant from '../constants/uiConstants';
 import R from 'resources/R';
 
 const MealItem = props => {
   return (
-    <View style={styles.mealItem}>
+    <Card style={styles.mealItem}>
       <TouchableOpacity onPress={props.onSelectMeal}>
-        <View>
+        <View style={styles.innerView}>
           <View style={styles.mealRow}>
             <ImageBackground
               source={{ uri: props.image }}
@@ -27,18 +29,21 @@ const MealItem = props => {
           </View>
         </View>
       </TouchableOpacity>
-    </View>
+    </Card>
   );
 };
 
 const styles = StyleSheet.create({
   mealItem: {
+    flex: 1,
     height: 200,
-    width: '100%',
-    backgroundColor: '#f5f5f5',
     borderRadius: 10,
-    overflow: 'hidden',
-    marginVertical: 10
+    marginVertical: 10,
+    overflow: uiConstant.isAndroid && Platform.Version >= 21 ? 'hidden' : 'visible',
+  },
+  innerView: {
+    borderRadius: 10, 
+    overflow: 'hidden'
   },
   bgImage: {
     width: '100%',
