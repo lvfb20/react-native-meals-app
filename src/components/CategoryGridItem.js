@@ -5,29 +5,26 @@ import {
   Text,
   StyleSheet,
   Platform,
-  TouchableNativeFeedback
+  TouchableNativeFeedback,
 } from 'react-native';
+import Card from './Card';
+import uiConstant from '../constants/uiConstants';
+import R from 'resources/R';
 
-import uiConstant from '../constants/uiConstants'
-
-const CategoryGridItem = props => {
+const CategoryGridItem = (props) => {
   let TouchableCmp = TouchableOpacity;
 
   if (Platform.OS === 'android' && Platform.Version >= 21) {
     TouchableCmp = TouchableNativeFeedback;
   }
   return (
-    <View style={styles.gridItem}>
-      <TouchableCmp style={{ flex: 1 }} onPress={props.onSelect}>
-        <View
-          style={{ ...styles.container, ...{ backgroundColor: props.color } }}
-        >
-          <Text style={styles.title} numberOfLines={2}>
-            {props.title}
-          </Text>
-        </View>
-      </TouchableCmp>
-    </View>
+    <TouchableCmp style={styles.container} onPress={props.onSelect}>
+      <Card style={{...styles.gridItem, backgroundColor: props.color}}>
+        <Text style={styles.title} numberOfLines={2}>
+          {props.title}
+        </Text>
+      </Card>
+    </TouchableCmp>
   );
 };
 
@@ -38,26 +35,18 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 10,
     overflow:
-      uiConstant.isAndroid && Platform.Version >= 21
-        ? 'hidden'
-        : 'visible',
-    elevation: 5
-  },
-  container: {
-    flex: 1,
-    borderRadius: 10,
-    shadowColor: 'black',
-    shadowOpacity: 0.26,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 10,
+      uiConstant.isAndroid && Platform.Version >= 21 ? 'hidden' : 'visible',
     padding: 15,
     justifyContent: 'flex-end',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    flexDirection: 'column',
+  },
+  container: {
+    flex: 1
   },
   title: {
-    fontSize: 22,
-    textAlign: 'right'
-  }
+    ...R.textStyles.h3
+  },
 });
 
 export default CategoryGridItem;

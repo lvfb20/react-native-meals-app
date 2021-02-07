@@ -9,6 +9,8 @@ const colors = {
     divider: '#BDBDBD',
     clear: 'transparent',
     opacity: 'rgba(0,0,0,0.4)',
+    white: '#FFF',
+    black: '#000'
   };
   
   export default colors;
