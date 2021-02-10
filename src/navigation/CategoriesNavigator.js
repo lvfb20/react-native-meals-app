@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, SafeAreaView, Text} from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { enableScreens } from 'react-native-screens';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { createDrawerNavigator, DrawerItemList } from '@react-navigation/drawer'
 import ScreenKey from '../constants/screenKeys';
 import uiConstants from '../constants/uiConstants';
@@ -15,8 +16,9 @@ import MealDetailScreen from '../screens/MealDetailScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import FiltersScreen from '../screens/FiltersScreen';
 
-const CategoriesStackNavigator = createStackNavigator();
-const FiltersStackNavigator = createStackNavigator();
+enableScreens();
+const CategoriesStackNavigator = createNativeStackNavigator();
+const FiltersStackNavigator = createNativeStackNavigator();
 const DrawerNavigator = createDrawerNavigator();
 
 const defaultScreenOptions = {
@@ -40,6 +42,7 @@ export const CategoriesNavigator = (props) => {
         component={CategoriesScreen} 
         options={{
             headerTitle: 'Categories',
+            // headerLargeTitle: true,
           }}></CategoriesStackNavigator.Screen>
       <CategoriesStackNavigator.Screen
         name={ScreenKey.categoryMeals}
