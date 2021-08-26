@@ -1,10 +1,6 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {
-  CategoriesNavigator,
-  SideNavigator,
-  RootStackNavigator,
-} from './CategoriesNavigator';
+import RootStackNavigator from './RootNavigator';
 
 const AppNavigator = (props) => {
   return (
