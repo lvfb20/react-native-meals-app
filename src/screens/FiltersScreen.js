@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {applyFilters} from '../store';
 import FilterSwitch from '../components/FilterSwitch';
 import ButtonIcon from '../components/ButtonIcon';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
+import {faBars, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 import R from 'resources/R';
 
 const FiltersScreen = (props) => {
@@ -30,10 +30,16 @@ const FiltersScreen = (props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <ButtonIcon style={{marginLeft: 10}} icon={faBars} onPress={() => {
+        <ButtonIcon  icon={faBars} onPress={() => {
           navigation.toggleDrawer();
         }}></ButtonIcon>
       ),
+      headerRight: () => (
+        <ButtonIcon  icon={faInfoCircle} onPress={() => {
+          navigation.navigate('ModalInfo');
+        }}></ButtonIcon>
+      ),
+   
     });
   }, [navigation]);
 

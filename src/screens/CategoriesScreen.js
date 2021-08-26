@@ -21,7 +21,7 @@ const CategoriesScreen = (props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <ButtonIcon style={{marginLeft: 10}} icon={faBars} onPress={() => {
+        <ButtonIcon icon={faBars} onPress={() => {
           navigation.toggleDrawer();
         }}></ButtonIcon>
       ),
