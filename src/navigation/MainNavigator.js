@@ -6,7 +6,7 @@ import {faFilter} from '@fortawesome/free-solid-svg-icons';
 import {faThLarge} from '@fortawesome/free-solid-svg-icons';
 import R from 'resources/R';
 import FiltersNavigator from './FiltersNavigator';
-import CategoriesNavigator from './CategoriesNavigator';
+import TabsNavigator from './TabsNavigator';
 
 const DrawerNavigator = createDrawerNavigator();
 
@@ -31,9 +31,10 @@ const MainNavigator = (props) => {
         },
       }}>
       <DrawerNavigator.Screen
-        name={'Categories'}
-        component={CategoriesNavigator}
+        name={'TabsNavigator'}
+        component={TabsNavigator}
         options={{
+          drawerLabel: 'Categories',
           drawerIcon: (props) => (
             <FontAwesomeIcon icon={faThLarge} color={R.colors.primary} />
           ),
@@ -42,6 +43,7 @@ const MainNavigator = (props) => {
         name={'Filters'}
         component={FiltersNavigator}
         options={{
+          drawerLabel: 'Filters',
           drawerIcon: (props) => (
             <FontAwesomeIcon icon={faFilter} color={R.colors.primary} />
           ),
