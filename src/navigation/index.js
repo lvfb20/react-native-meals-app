@@ -5,6 +5,7 @@ export const defaultScreenOptions = {
   headerStyle: {
     backgroundColor: uiConstants.isAndroid ? R.colors.primary : '',
   },
+  //headerLargeTitle: true, //Support Large titles
   headerTintColor: uiConstants.isAndroid ? 'white' : R.colors.primary,
   headerTitle: '',
   headerTitleStyle: {
