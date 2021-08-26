@@ -1,4 +1,4 @@
-import colors from './colors';
+import colors from './Colors';
 
 const styles = {
   icon: {
@@ -7,10 +7,10 @@ const styles = {
     // paddingHorizontal: 10
   },
   centered: {
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center'
-  }
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 };
 
 export default styles;

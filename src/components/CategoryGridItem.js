@@ -7,7 +7,7 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import Card from './Card';
-import uiConstants from '../constants/uiConstants';
+import uiConstants from '../constants/UiConstants';
 import R from 'resources/R';
 
 const CategoryGridItem = (props) => {

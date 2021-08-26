@@ -7,7 +7,7 @@ import {
   ImageBackground
 } from 'react-native';
 import Card from './Card';
-import uiConstant from '../constants/uiConstants';
+import uiConstant from '../constants/UiConstants';
 import R from 'resources/R';
 
 const MealItem = props => {

@@ -1,5 +1,5 @@
-import colors from './colors';
-import fonts from './fonts';
+import colors from './Colors';
+import fonts from './Fonts';
 
 const textStyles = {
   h1: {

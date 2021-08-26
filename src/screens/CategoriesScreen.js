@@ -1,10 +1,16 @@
-import React, { useEffect, useCallback, useState } from 'react';
-import { FlatList, StyleSheet, Button, View, ActivityIndicator, Alert } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import React, {useEffect, useCallback, useState} from 'react';
+import {
+  FlatList,
+  StyleSheet,
+  View,
+  ActivityIndicator,
+  Alert,
+} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
 
-import { CategoriesThunks } from '../store';
+import {CategoriesThunks} from '../store';
 
-import ScreenKeys from '../constants/screenKeys';
+import ScreenKeys from '../constants/ScreenKeys';
 import R from 'resources/R';
 
 import CategoryGridItem from '../components/CategoryGridItem';
@@ -15,15 +21,17 @@ const CategoriesScreen = (props) => {
   const navigation = props.navigation;
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
-  const { categories, error } = useSelector((state) => state.categories);
+  const {categories, error} = useSelector((state) => state.categories);
 
   //Set navigation menu drawer
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <ButtonIcon icon={faBars} onPress={() => {
-          navigation.toggleDrawer();
-        }}></ButtonIcon>
+        <ButtonIcon
+          icon={faBars}
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}></ButtonIcon>
       ),
     });
   }, [navigation]);
@@ -43,7 +51,7 @@ const CategoriesScreen = (props) => {
   //Display error alert
   useEffect(() => {
     if (error) {
-      Alert.alert("Error", error.message )
+      Alert.alert('Error', error.message);
     }
   }, [error]);
 
@@ -79,7 +87,6 @@ const CategoriesScreen = (props) => {
   );
 };
 
-const styles = StyleSheet.create({
-});
+const styles = StyleSheet.create({});
 
 export default CategoriesScreen;

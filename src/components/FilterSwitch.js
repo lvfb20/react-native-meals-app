@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Switch, StyleSheet} from 'react-native';
-import uiConstants from '../constants/uiConstants';
+import uiConstants from '../constants/UiConstants';
 import R from 'resources/R';
 
 const FilterSwitch = (props) => {

@@ -6,7 +6,7 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 
-import uiConstants from '../constants/uiConstants';
+import uiConstants from '../constants/UiConstants';
 import R from 'resources/R';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
