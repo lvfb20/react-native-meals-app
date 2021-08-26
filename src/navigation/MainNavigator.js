@@ -4,7 +4,9 @@ import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faFilter} from '@fortawesome/free-solid-svg-icons';
 import {faThLarge} from '@fortawesome/free-solid-svg-icons';
+
 import R from 'resources/R';
+import ScreenKeys from '../constants/ScreenKeys';
 import FiltersNavigator from './FiltersNavigator';
 import TabsNavigator from './TabsNavigator';
 
@@ -31,7 +33,7 @@ const MainNavigator = (props) => {
         },
       }}>
       <DrawerNavigator.Screen
-        name={'TabsNavigator'}
+        name={ScreenKeys.tabsNavigator}
         component={TabsNavigator}
         options={{
           drawerLabel: 'Categories',
@@ -40,7 +42,7 @@ const MainNavigator = (props) => {
           ),
         }}></DrawerNavigator.Screen>
       <DrawerNavigator.Screen
-        name={'Filters'}
+        name={ScreenKeys.filtersNavigator}
         component={FiltersNavigator}
         options={{
           drawerLabel: 'Filters',
