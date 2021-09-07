@@ -8,6 +8,8 @@ const ScreenKey = {
   tabsNavigator: 'TabsNavigator',
   filtersNavigator: 'FiltersNavigator',
   categoriesNavigator: 'CategoriesNavigator',
+  login: 'LoginScreen',
+  register: 'RegisterScreen',
 };
 
 export default ScreenKey;

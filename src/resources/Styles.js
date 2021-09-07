@@ -11,6 +11,11 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  formError: {
+    fontSize: 10,
+    color: 'red',
+    margin: 6,
+  },
 };
 
 export default styles;

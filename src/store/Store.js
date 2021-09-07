@@ -3,12 +3,14 @@ import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import MealsSlice from './slices/MealsSlice';
+import MealsReducer from './slices/MealsSlice';
 import CategoriesReducer from './slices/CategoriesSlice';
+import UserReducer from './slices/UserSlice';
 
 const rootReducer = {
   categories: CategoriesReducer,
-  meals: MealsSlice,
+  meals: MealsReducer,
+  user: UserReducer,
 };
 
 const middleware = [...getDefaultMiddleware(), thunk, logger];

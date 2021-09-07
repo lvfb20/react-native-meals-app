@@ -7,7 +7,6 @@ import {
   Alert,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-
 import {CategoriesThunks} from '../store';
 
 import ScreenKeys from '../constants/ScreenKeys';
