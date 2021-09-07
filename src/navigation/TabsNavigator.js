@@ -28,6 +28,7 @@ const TabsNavigator = () => {
               color={focused ? R.colors.primary : R.colors.lightGrey}
             />
           ),
+          tabBarLabel: 'Categories'
         }}
         name={ScreenKey.categoriesNavigator}
         component={CategoriesNavigator}></BottomTabsNavigator.Screen>
@@ -39,6 +40,7 @@ const TabsNavigator = () => {
               color={focused ? R.colors.primary : R.colors.lightGrey}
             />
           ),
+          tabBarLabel: 'Profile'
         }}
         name={ScreenKey.profile}
         component={ProfileScreen}></BottomTabsNavigator.Screen>
